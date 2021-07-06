@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import MediasList from "./MediasList";
 import SearchInput from "./SearchInput";
+import SeeDetailsModal from "./SeeDetailsModal";
 
 class Home extends React.Component {
     state = {
@@ -11,7 +12,6 @@ class Home extends React.Component {
       moviesList: [],
       toWatchList: [],
       watchedList: [],
-      waitingNewSeasonList: [],
       modalShow: false,
       currentlySelected: {},
       location: "",
@@ -27,7 +27,6 @@ class Home extends React.Component {
           this.setState({
             toWatchList: [...response.data.toWatchList],
             watchedList: [...response.data.watchedList],
-            waitingNewSeasonList: [...response.data.waitingNewSeasonList],
           });
         } catch (err) {
           console.error(err);
@@ -39,9 +38,7 @@ class Home extends React.Component {
     componentDidUpdate = async (prevProps, prevState) => {
       if (
         prevState.toWatchList.length !== this.state.toWatchList.length ||
-        prevState.watchedList.length !== this.state.watchedList.length ||
-        prevState.waitingNewSeasonList.length !==
-          this.state.waitingNewSeasonList.length
+        prevState.watchedList.length !== this.state.watchedList.length 
       ) {
         if (this.props.match.params.id) {
           try {
@@ -50,7 +47,7 @@ class Home extends React.Component {
               {
                 toWatchList: this.state.toWatchList,
                 watchedList: this.state.watchedList,
-                waitingNewSeasonList: this.state.waitingNewSeasonList,
+                
               }
             );
           } catch (err) {
@@ -130,23 +127,7 @@ class Home extends React.Component {
           }
           this.handleClose();
           break;
-        case "waiting":
-          this.state.waitingNewSeasonList.forEach((movie) => {
-            if (movie.id === this.state.currentlySelected.id) {
-              includes = true;
-            }
-          });
-          if (!includes) {
-            this.setState({
-              waitingNewSeasonList: [
-                ...this.state.waitingNewSeasonList,
-                this.state.currentlySelected,
-              ],
-            });
-            includes = false;
-          }
-          this.handleClose();
-          break;
+
         case "watched":
           this.state.watchedList.forEach((movie) => {
             if (movie.id === this.state.currentlySelected.id) {
@@ -232,13 +213,7 @@ class Home extends React.Component {
               handleShow={this.handleShow}
               listTitle="Want To Watch"
             />
-            {/* Waiting new season List */}
-            <MediasList
-              location="waitingNewSeasonList"
-              contentList={this.state.waitingNewSeasonList}
-              handleShow={this.handleShow}
-              listTitle="Waiting New Season and Currently Watching"
-            />
+            
             {/* Already watched List */}
             <MediasList
               location="watchedList"
@@ -248,14 +223,14 @@ class Home extends React.Component {
             />
           </div>
           {/* See details Modal */}
-          {/* <SeeDetailsModal
+          <SeeDetailsModal
             show={this.state.modalShow}
             onHide={() => this.handleClose()}
             currentlySelected={this.state.currentlySelected}
             location={this.state.location}
             handleButtonModal={this.handleButtonModal}
             userId={this.props.match.params.id}
-          /> */}
+          />
         </div>
       );
     }

@@ -26,11 +26,11 @@ class SignUpForm extends Component {
     event.preventDefault();
     try {
       await axios.post(
-        "https://ironrest.herokuapp.com/MovieJunkie",
+        "https://ironrest.herokuapp.com/miewMovies",
         this.state
       );
       const responseUsername = await axios.get(
-        "https://ironrest.herokuapp.com/MovieJunkie"
+        "https://ironrest.herokuapp.com/miewMovies"
       );
       const userbyName = responseUsername.data.filter(
         (databaseUser) => databaseUser.username === this.state.username
