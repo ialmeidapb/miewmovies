@@ -4,7 +4,7 @@ import axios from "axios";
 
 class Home extends React.Component {
     state = {
-      search: "vikings",
+      search: "a",
       seriesList: [],
       moviesList: [],
       toWatchList: [],
