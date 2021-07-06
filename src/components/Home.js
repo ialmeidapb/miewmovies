@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import MediasList from "./MediasList";
+import SearchInput from "./SearchInput";
 
 class Home extends React.Component {
     state = {
@@ -194,8 +196,8 @@ class Home extends React.Component {
       return (
         <div className="container-fluid" style={{ paddingBottom: "100px" }}>
           <div className="logo">
-            <img src={logoPicture} className="logo-picture" alt="Logo" />
-            <h2>Movie Junkie</h2>
+            
+            <h2>Miew Movies</h2>
             {/* Search Input */}
             <SearchInput
               type="text"
@@ -246,14 +248,14 @@ class Home extends React.Component {
             />
           </div>
           {/* See details Modal */}
-          <SeeDetailsModal
+          {/* <SeeDetailsModal
             show={this.state.modalShow}
             onHide={() => this.handleClose()}
             currentlySelected={this.state.currentlySelected}
             location={this.state.location}
             handleButtonModal={this.handleButtonModal}
             userId={this.props.match.params.id}
-          />
+          /> */}
         </div>
       );
     }
