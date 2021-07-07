@@ -53,7 +53,7 @@ function SeeDetailsModal(props) {
             style={{ fontSize: "12px" }}
             onClick={props.handleButtonModal}
           >
-            To Watch
+            Favorites
           </button>
         ) : null}
         
@@ -65,7 +65,7 @@ function SeeDetailsModal(props) {
             style={{ fontSize: "12px" }}
             onClick={props.handleButtonModal}
           >
-            Already watched
+            Wall of Shame
           </button>
         ) : null}
         {props.location !== "searchSeries" &&
@@ -90,14 +90,7 @@ function SeeDetailsModal(props) {
                 : `/details/${props.location}/${props.currentlySelected.id}`
             }
           >
-            <button
-              type="button"
-              className="btn btn-light"
-              style={{ fontSize: "12px" }}
-              onClick={props.onHide}
-            >
-              More Info
-            </button>
+
           </Link>
         ) : null}
       </Modal.Footer>

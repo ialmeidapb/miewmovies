@@ -2,10 +2,11 @@ import React from "react";
 
 function SearchInput(props) {
   return (
-    <div className="container d-flex justify-content-center input-group my-3">
+    <div className="container d-flex justify-content-center input-group my-3"  style={{backgroundColor:"transparent"}}>
       <input
         type={props.type}
         className="form-control col col-lg-5"
+        style={{backgroundColor:"transparent", color:"white"}}
         placeholder={props.placeHolder}
         aria-label={props.ariaLabel}
         name={props.name}

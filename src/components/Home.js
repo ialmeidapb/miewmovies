@@ -4,6 +4,9 @@ import axios from "axios";
 import MediasList from "./MediasList";
 import SearchInput from "./SearchInput";
 import SeeDetailsModal from "./SeeDetailsModal";
+import "../index.css"
+import Navbar from "./Navbar"
+
 
 class Home extends React.Component {
     state = {
@@ -175,10 +178,11 @@ class Home extends React.Component {
   
     render() {
       return (
+        <div>
+        <Navbar/>
         <div className="container-fluid" style={{ paddingBottom: "100px" }}>
           <div className="logo">
-            
-            <h2>Miew Movies</h2>
+            <h2 style={{backgroundColor:"transparent"}}>Miew Movies</h2>
             {/* Search Input */}
             <SearchInput
               type="text"
@@ -211,7 +215,7 @@ class Home extends React.Component {
               location="toWatchList"
               contentList={this.state.toWatchList}
               handleShow={this.handleShow}
-              listTitle="Want To Watch"
+              listTitle="Favorites"
             />
             
             {/* Already watched List */}
@@ -219,7 +223,7 @@ class Home extends React.Component {
               location="watchedList"
               contentList={this.state.watchedList}
               handleShow={this.handleShow}
-              listTitle="Already Watched"
+              listTitle="Wall of Shame"
             />
           </div>
           {/* See details Modal */}
@@ -232,6 +236,9 @@ class Home extends React.Component {
             userId={this.props.match.params.id}
           />
         </div>
+
+        </div>
+        
       );
     }
   }
