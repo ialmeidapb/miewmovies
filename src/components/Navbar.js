@@ -5,7 +5,7 @@ import logo from "./assets/logo.png";
 
 function Navbar(props) {
   return (
-    <nav style={{ backgroundColor: "black" }} className="navbar navbar-light">
+    <nav className="navbar navbar-light">
       <div className="container-fluid">
         <Link
           className="navbar-brand"

@@ -92,6 +92,26 @@ function SeeDetailsModal(props) {
             }
           ></Link>
         ) : null}
+        {/* As a Link, the more info button changes the URL, redirecting the user to see the component seeMoreInfoDetails */}
+        {props.location === "searchMovies" ||
+        props.location === "searchSeries" ? (
+          <Link
+            to={
+              history.location.pathname !== "/"
+                ? `${history.location.pathname}details/${props.location}/${props.currentlySelected.id}`
+                : `/details/${props.location}/${props.currentlySelected.id}`
+            }
+          >
+            <button
+              type="button"
+              className="btn btn-light"
+              style={{ fontSize: "12px" }}
+              onClick={props.onHide}
+            >
+              More Info
+            </button>
+          </Link>
+        ) : null}
       </Modal.Footer>
     </Modal>
   );

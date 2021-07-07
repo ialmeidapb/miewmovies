@@ -1,5 +1,6 @@
 import { Component } from "react";
 import axios from "axios";
+import Navbar from './Navbar'
 
 // When the user clicks to see more details through one of the modal buttons, the Browser Router will idenfy the modification in the url and redirect the user to see this component.
 // Show more details that weren't displayed in the modal.
@@ -43,7 +44,9 @@ class SeeMoreDetails extends Component {
 
   render() {
     return (
-      <div className="container mt-5" style={{ paddingBottom: "100px" }}>
+<div>
+<div className="container mt-5" style={{ paddingBottom: "100px" }}>
+
         <div className="row d-flex justify-content-evenly seeMoreDetailsContainer">
           <div className="col-4">
             <img
@@ -130,7 +133,7 @@ class SeeMoreDetails extends Component {
                       alt="cast"
                     />
                     <div className="card-body">
-                      <p className="card-text" style={{ color: "black" }}>
+                      <p className="card-text" style={{ color: "lightgray" }}>
                         <strong>{character.name}</strong> as{" "}
                         {character.character}
                       </p>
@@ -141,6 +144,10 @@ class SeeMoreDetails extends Component {
           </div>
         </div>
       </div>
+
+</div>
+
+      
     );
   }
 }

@@ -10,7 +10,6 @@ class SignUpForm extends Component {
     termsAgreement: true,
     favorites: [],
     wallofShame: [],
-    waitingNewSeasonList: [],
   };
 
   handleChange = (event) => {
@@ -35,7 +34,7 @@ class SignUpForm extends Component {
       const userbyName = responseUsername.data.filter(
         (databaseUser) => databaseUser.username === this.state.username
       );
-      history.push(`/home/${userbyName[0]._id}`);
+      history.push(`/${userbyName[0]._id}`);
       this.props.handleLogIn(true);
     } catch (err) {
       console.error(err);
@@ -88,13 +87,14 @@ class SignUpForm extends Component {
           {/* Password */}
           {/* Buttons */}
           <div className="d-flex justify-content-around">
-            <button className="btn btn-success" type="submit">
+            <button className="btn btn-success" style={{backgroundColor: "transparent"}} type="submit">
               Submit
             </button>
 
             <button
               onClick={this.handleCancelButton}
               className="btn btn-danger"
+              style={{backgroundColor: "transparent"}}
             >
               Cancel
             </button>

@@ -1,5 +1,7 @@
 import React from "react";
 
+
+
 // As a functional component it receives through props the list of the content to be rendered
 function MediasList(props) {
   if (props.contentList.length !== 0) {
@@ -21,9 +23,11 @@ function MediasList(props) {
                     style={{ height: "200px" }}
                     alt="poster"
                   />
+                  
                   <div className="overlay d-flex align-items-center justify-content-center">
-                    See details
+                  See details
                   </div>
+                  
                 </div>
               );
             } else {

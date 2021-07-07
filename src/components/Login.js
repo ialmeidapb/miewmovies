@@ -30,7 +30,7 @@ class LogInForm extends Component {
         if (
           parseInt(userbyName[0].password) === parseInt(this.state.password)
         ) {
-          history.push(`/home/${userbyName[0]._id}/`);
+          history.push(`/${userbyName[0]._id}/`);
           this.props.handleLogIn(true);
         } else {
           window.alert("Wrong username or password!");
@@ -75,12 +75,13 @@ class LogInForm extends Component {
           {/* Buttons */}
 
           <div className="d-flex justify-content-around">
-            <button className="btn btn-success" type="submit">
+            <button className="btn btn-success" style={{backgroundColor: "transparent"}} type="submit">
               Submit
             </button>
             <button
               onClick={this.handleCancelButton}
               className="btn btn-danger"
+              style={{backgroundColor: "transparent"}}
             >
               Cancel
             </button>

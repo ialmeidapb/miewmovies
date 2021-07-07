@@ -2,7 +2,7 @@ import React from "react";
 
 function Footer() {
   return (
-    <nav className="navbar fixed-bottom" style={{ backgroundColor: "black" }}>
+    <nav className="navbar bottom">
       <div className="container-fluid justify-content-center">
         <div className="d-flex-column text-center">
           <h5>Miew Movies</h5>

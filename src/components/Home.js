@@ -174,7 +174,6 @@ class Home extends React.Component {
   render() {
     return (
       <div>
-        <Navbar />
         <div className="container-fluid" style={{ paddingBottom: "100px" }}>
           <div className="logo">
             <h2 className="title" style={{ backgroundColor: "transparent" }}>Miew Movies</h2>
