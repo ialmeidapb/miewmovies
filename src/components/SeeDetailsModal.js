@@ -13,6 +13,7 @@ const style = {
 function SeeDetailsModal(props) {
   return (
     <Modal
+      // onTouchMove={props.handleButtonModal}
       show={props.show}
       onHide={props.onHide}
       size="md"
@@ -45,7 +46,7 @@ function SeeDetailsModal(props) {
       </Modal.Body>
       {/* The modal footer holds all the buttons and check the status in which whichone of them should be shown*/}
       <Modal.Footer style={style}>
-        {props.location !== "toWatchList" ? (
+        {props.location !== "favorites" ? (
           <button
             type="button"
             name="toWatch"
@@ -56,8 +57,8 @@ function SeeDetailsModal(props) {
             Favorites
           </button>
         ) : null}
-        
-        {props.location !== "watchedList" ? (
+
+        {props.location !== "wallofShame" ? (
           <button
             type="button"
             name="watched"
@@ -89,9 +90,7 @@ function SeeDetailsModal(props) {
                 ? `${history.location.pathname}details/${props.location}/${props.currentlySelected.id}`
                 : `/details/${props.location}/${props.currentlySelected.id}`
             }
-          >
-
-          </Link>
+          ></Link>
         ) : null}
       </Modal.Footer>
     </Modal>

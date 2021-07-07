@@ -30,7 +30,7 @@ class LogInForm extends Component {
         if (
           parseInt(userbyName[0].password) === parseInt(this.state.password)
         ) {
-          history.push(`/${userbyName[0]._id}/`);
+          history.push(`/home/${userbyName[0]._id}/`);
           this.props.handleLogIn(true);
         } else {
           window.alert("Wrong username or password!");

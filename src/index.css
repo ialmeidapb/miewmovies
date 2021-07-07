@@ -1,7 +1,16 @@
+
+@font-face{
+  font-family: miew;
+  src: url(./components/assets/ArchitectsDaughter-Regular.ttf);
+}
+
 * {
   background-color: #141414;
   color: white;
+  font-family: miew;
 }
+
+
 
 .movie-app > .row {
   overflow-x: auto;

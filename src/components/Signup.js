@@ -7,9 +7,9 @@ class SignUpForm extends Component {
     email: "",
     username: "",
     password: "",
-    termsAgreement: false,
-    toWatchList: [],
-    watchedList: [],
+    termsAgreement: true,
+    favorites: [],
+    wallofShame: [],
     waitingNewSeasonList: [],
   };
 
@@ -35,7 +35,7 @@ class SignUpForm extends Component {
       const userbyName = responseUsername.data.filter(
         (databaseUser) => databaseUser.username === this.state.username
       );
-      history.push(`/${userbyName[0]._id}`);
+      history.push(`/home/${userbyName[0]._id}`);
       this.props.handleLogIn(true);
     } catch (err) {
       console.error(err);
