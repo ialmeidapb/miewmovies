@@ -37,6 +37,7 @@ class Home extends React.Component {
     this.handleSubmit();
   };
 
+  //update the page based on the api info.
   componentDidUpdate = async (prevProps, prevState) => {
     if (
       prevState.favorites.length !== this.state.favorites.length ||

@@ -16,6 +16,7 @@ function Navbar(props) {
           Miew Movies
         </Link>
       </div>
+     
     </nav>
   );
 }
