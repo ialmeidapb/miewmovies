@@ -80,7 +80,7 @@ function SeeDetailsModal(props) {
           <button
             type="button"
             name="watched"
-            className="btn btn-primary"
+            className="btn btn-danger"
             style={{ fontSize: "12px" }}
             onClick={props.handleButtonModal}
           >
@@ -92,7 +92,7 @@ function SeeDetailsModal(props) {
           <button
             type="button"
             name="delete"
-            className="btn btn-danger"
+            className="btn btn-warning"
             style={{ fontSize: "12px" }}
             onClick={props.handleButtonModal}
           >
