@@ -95,7 +95,8 @@
 .image {
   border: 3px solid white;
   border-radius: 5px;
-  height: 500px;
+  width: auto;
+  height: 50vh;
 }
 
 .info {
