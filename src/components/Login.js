@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import history from "../history";
+import { Link } from "react-router-dom";
 
 class LogInForm extends Component {
   state = {
@@ -84,11 +85,18 @@ class LogInForm extends Component {
               style={{backgroundColor: "transparent"}}
             >
               Cancel
-            </button>
+            </button> <br/>
+          
+            
           </div>
 
           {/* Buttons */}
+          <div>
+          <br/>
+            <p>Not a member yet? Click <Link to="/signup">here</Link> and SignUp</p>
+            </div>
         </form>
+        
       </div>
     );
   }

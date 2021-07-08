@@ -22,11 +22,7 @@ function NavbarB4() {
                   <span>LogIn</span>
                 </Link>
               </p>
-              <p className="control" style={{ marginLeft: "10px" }}>
-                <Link to="/signup" className="btn btn-primary" style={{backgroundColor: "transparent"}}>
-                  <span>SignUp</span>
-                </Link>
-              </p>
+              
             </div>
           </div>
         </div>
