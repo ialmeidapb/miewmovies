@@ -2,16 +2,34 @@ import React from "react";
 import { Modal } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import history from "../history";
+import { Swipeable, direction } from 'react-deck-swiper';
+import "./modal.css"
 
 const style = {
   backgroundColor: "#141414",
   color: "white",
 };
 
+
+  
+
 // MODAL COMPONENT //
 // The heart of the application. Contains all the necessary buttons to provide the media management. As a  functional component it peforms all the asked actions by lifting the state up
 function SeeDetailsModal(props) {
+  const handleOnSwipe = (swipeDirection) => {
+    if (swipeDirection === direction.RIGHT) {
+      // handle right swipe
+      return;
+    }
+
+    if (swipeDirection === direction.LEFT) {
+      // handle left swipe
+      return;
+    }
+  }
+ 
   return (
+    <Swipeable onSwipe={handleOnSwipe}>
     <Modal
       // onTouchMove={props.handleButtonModal}
       show={props.show}
@@ -98,7 +116,7 @@ function SeeDetailsModal(props) {
           <Link
             to={
               history.location.pathname !== "/"
-                ? `${history.location.pathname}details/${props.location}/${props.currentlySelected.id}`
+                ? `/details/${props.location}/${props.currentlySelected.id}`
                 : `/details/${props.location}/${props.currentlySelected.id}`
             }
           >
@@ -114,6 +132,7 @@ function SeeDetailsModal(props) {
         ) : null}
       </Modal.Footer>
     </Modal>
+    </Swipeable>
   );
 }
 

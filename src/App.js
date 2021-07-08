@@ -29,6 +29,7 @@ class App extends React.Component {
               <Switch>
                 <Route path="/:userId" component={Navbar} />
                 <Route path="/:userId/:whatever" component={Navbar} />
+                <Route path="/" component={Home} />
               </Switch>
             ) : (
               <Route path="/" component={NavbarB4} />
@@ -41,7 +42,7 @@ class App extends React.Component {
               )}
               {this.state.isLoggedIn ? (
                 <Route
-                  path="/:userId/details/:location/:id"
+                  path="/details/:location/:id"
                   component={SeeMoreDetails}
                 />
               ) : (
