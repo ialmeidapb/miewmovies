@@ -75,7 +75,7 @@ class SeeMoreDetails extends Component {
 
             <div className="container">
               <div className="row">
-                <h5 className="col-3">Genre</h5>
+                <h5>Genre</h5>
                 <div className="col-3">
                   <ul className="list-unstyled">
                     {this.state.mediaDetails.genres !== undefined
@@ -88,7 +88,7 @@ class SeeMoreDetails extends Component {
               </div>
               {this.state.mediaDetails.runtime !== undefined ? (
                 <div className="row info">
-                  <h5 className="col-3">Duration</h5>
+                  <h5>Duration</h5>
                   <div className="col-3">
                     {this.state.mediaDetails.runtime} min
                   </div>
@@ -96,13 +96,13 @@ class SeeMoreDetails extends Component {
               ) : null}
 
               <div className="row info">
-                <h5 className="col-3">Movie score</h5>
+                <h5>Movie score</h5>
                 <div className="col-3">
                   ★ {this.state.mediaDetails.vote_average}
                 </div>
               </div>
               <div className="row">
-                <h5 className="col-3">Audio languages</h5>
+                <h5>Audio languages</h5>
                 <div className=" col-3">
                   <ul className="list-unstyled">
                     {this.state.mediaDetails.spoken_languages !== undefined

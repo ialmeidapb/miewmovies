@@ -111,6 +111,7 @@ h3 {
 
 .seeMoreDetailsContainer {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
+
 
