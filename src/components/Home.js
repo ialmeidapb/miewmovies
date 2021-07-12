@@ -43,7 +43,7 @@ class Home extends React.Component {
       prevState.favorites.length !== this.state.favorites.length ||
       prevState.wallofShame.length !== this.state.wallofShame.length
     ) {
-      if (this.props.match.params.id) {
+      if (this.props.match.params.userId) {
         try {
           await axios.put(
             `https://ironrest.herokuapp.com/miewMovies/${this.props.match.params.userId}`,
